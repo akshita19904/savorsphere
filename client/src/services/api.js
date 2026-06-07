@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://savorsphere-production.up.railway.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -22,7 +22,7 @@ export const fetchRestaurantById = async (id) => {
 export const fetchRestaurants = async (filters = {}) => {
     try {
       console.log('Attempting to fetch restaurants from:', API_BASE_URL);
-      const response = await axios.get('http://localhost:5000/api/restaurants', { params: filters });
+      const response = await axios.get('https://savorsphere-production.up.railway.app/api/restaurants', { params: filters });
       return response.data;
     } catch (error) {
       console.error('API Connection Error:', error.message);

@@ -9,7 +9,7 @@ const UserProfile = ({ onLogout }) => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:5000/api/user/profile', {
+    fetch('https://savorsphere-production.up.railway.app/api/user/profile', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())

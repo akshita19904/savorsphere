@@ -18,7 +18,7 @@ const RestaurantMenuModal = ({ restaurant, isOpen, onClose }) => {
     setReviewsError(null);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/restaurants/${restaurantId}/reviews`);
+      const response = await fetch(`https://savorsphere-production.up.railway.app/api/restaurants/${restaurantId}/reviews`);
       if (!response.ok) {
         throw new Error(`Failed to fetch reviews: ${response.status}`);
       }
@@ -61,7 +61,7 @@ const RestaurantMenuModal = ({ restaurant, isOpen, onClose }) => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('Authentication required. Please log in.');
 
-      const response = await fetch('http://localhost:5000/api/reviews', {
+      const response = await fetch('https://savorsphere-production.up.railway.app/api/reviews', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

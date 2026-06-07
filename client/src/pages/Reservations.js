@@ -133,7 +133,7 @@ const Reservations = () => {
       // Format time to match MySQL TIME format
       const formattedTime = convertTime(time);
 
-      const response = await axios.post('http://localhost:5000/api/reservations', {
+      const response = await axios.post('https://savorsphere-production.up.railway.app/api/reservations', {
         restaurant_id: parseInt(selectedRestaurant.id),
         date: formattedDate,
         time: formattedTime,
