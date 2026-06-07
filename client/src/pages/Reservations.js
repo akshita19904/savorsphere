@@ -61,7 +61,7 @@ const Reservations = () => {
 
   const handleRestaurantChange = (e) => {
     const restaurantId = e.target.value;
-    const selected = restaurants.find(r => r.id === restaurantId);
+    const selected = restaurants.find(r => r.id == restaurantId);
     setSelectedRestaurant(selected);
   };
 
