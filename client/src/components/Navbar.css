@@ -1,0 +1,105 @@
+/* src/components/Navbar.css */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0; /* Increased from 15px to 25px */
+  }
+  
+  .navbar-logo {
+    text-decoration: none;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 28px; /* Increased from 24px to 28px */
+  }
+  
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-item {
+    margin-left: 30px;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 18px; /* Increased from 16px to 18px */
+    padding: 8px 0; /* Added padding to make clickable area larger */
+  }
+  
+  .navbar-link:hover, 
+  .navbar-link.active {
+    color: #e74c3c;
+  }
+  
+  .navbar-button {
+    display: inline-block;
+    padding: 12px 24px; /* Increased from 10px 20px to 12px 24px */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px; /* Increased from 16px to 18px */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .sign-up {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .sign-up:hover {
+    background-color: #c0392b;
+  }
+  
+  .sign-out {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .sign-out:hover {
+    background-color: #f8f8f8;
+    color: #c0392b;
+    border-color: #c0392b;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-container {
+      flex-direction: column;
+      padding: 20px 0;
+    }
+    
+    .navbar-menu {
+      margin-top: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .navbar-item {
+      margin: 8px 15px;
+    }
+  }
