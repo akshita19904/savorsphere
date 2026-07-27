@@ -176,7 +176,7 @@ async function testDBConnection() {
   } finally {
     if (connection) connection.release();
   }
-}''
+}
 
 // Auth middleware with enhanced logging
 const authenticateToken = (req, res, next) => {
