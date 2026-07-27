@@ -18,14 +18,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0; /* Increased from 15px to 25px */
+    padding: 25px 0;
+    position: relative;
   }
   
   .navbar-logo {
     text-decoration: none;
     color: #e74c3c;
     font-weight: bold;
-    font-size: 28px; /* Increased from 24px to 28px */
+    font-size: 28px;
   }
   
   .navbar-menu {
@@ -45,8 +46,8 @@
     color: #333;
     font-weight: 500;
     transition: color 0.3s ease;
-    font-size: 18px; /* Increased from 16px to 18px */
-    padding: 8px 0; /* Added padding to make clickable area larger */
+    font-size: 18px;
+    padding: 8px 0;
   }
   
   .navbar-link:hover, 
@@ -56,11 +57,11 @@
   
   .navbar-button {
     display: inline-block;
-    padding: 12px 24px; /* Increased from 10px 20px to 12px 24px */
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 18px; /* Increased from 16px to 18px */
+    font-size: 18px;
     font-weight: 500;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -86,20 +87,72 @@
     color: #c0392b;
     border-color: #c0392b;
   }
+
+  /* Hamburger toggle button - hidden on desktop */
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+
+  .navbar-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-toggle.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
   
   @media (max-width: 768px) {
-    .navbar-container {
-      flex-direction: column;
-      padding: 20px 0;
+    .navbar-toggle {
+      display: flex;
     }
-    
+
     .navbar-menu {
-      margin-top: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px 20px 20px;
     }
-    
+
+    .navbar-menu.active {
+      display: flex;
+    }
+
     .navbar-item {
-      margin: 8px 15px;
+      margin-left: 0;
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    .navbar-button {
+      width: 100%;
+      text-align: center;
     }
   }
