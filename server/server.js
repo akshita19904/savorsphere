@@ -159,7 +159,8 @@ const pool = mysql.createPool({
   connectionLimit: 20,
   queueLimit: 0,
   timezone: '+00:00',
-  dateStrings: true
+  dateStrings: true,
+  charset: 'utf8mb4'
 });
 
 // Database connection test

@@ -22,7 +22,7 @@ export const fetchRestaurantById = async (id) => {
 export const fetchRestaurants = async (filters = {}) => {
     try {
       console.log('Attempting to fetch restaurants from:', API_BASE_URL);
-      const response = await axios.get('https://savorsphere-production.up.railway.app/api/restaurants', { params: filters });
+      const response = await api.get('/restaurants', { params: filters });
       return response.data;
     } catch (error) {
       console.error('API Connection Error:', error.message);

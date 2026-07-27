@@ -292,11 +292,10 @@ const RestaurantList = () => {
               value={filters.priceRange}
               onChange={handleFilterChange}
             >
-              <option value="">Any Price</option>
-              <option value="₹">₹</option>
-              <option value="₹₹">₹₹</option>
-              <option value="₹₹₹">₹₹₹</option>
-              <option value="₹₹₹₹">₹₹₹₹</option>
+              <option value="$">$</option>
+              <option value="$$">$$</option>
+              <option value="$$$">$$$</option>
+              <option value="$$$$">$$$$</option>
             </select>
           </div>
           
